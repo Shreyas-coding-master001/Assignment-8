@@ -1,0 +1,85 @@
+@mixin Flex-Center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background_Text($image){
+    background-image: url($image);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin Background($image,$size: center){
+    background-image: url($image);
+    background-size: cover;
+    background-position: $size;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.564);
+    display: flex;
+    gap: 10px;
+
+    section{
+        flex-grow: 1;
+        background-color: crimson;
+        @include Flex-Center;
+        font-size: 40px;
+
+        h3{
+            -webkit-text-stroke:1px white;
+        }
+    }
+
+    section:nth-child(1){
+        @include Background('./Media/Zenitzu.jpg');
+
+        h3{
+           @include background_Text('./Media/lighting_text.gif')
+        }
+    }
+
+    section:nth-child(2){
+        @include Background('./Media/TANJIRO_KAMADO.jpg');
+
+        h3{
+           @include background_Text('./Media/Water_Test.gif')
+        }
+    }
+    section:nth-child(3){
+        @include Background('./Media/Rengoku.jpg', bottom);
+
+        h3{
+           @include background_Text('./Media/Fire_Text.gif')
+        }
+    }
+    section:nth-child(4){
+        @include Background('./Media/Sanemi_Shinazugawa\ .jpg');
+
+        h3{
+           @include background_Text('./Media/Wind_Text.gif')
+        }
+    }
+
+    section:hover{
+        flex-grow: 3;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
