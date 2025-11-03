@@ -1,66 +1,80 @@
-var a = "Shreyas";
-let b = "Ravindra";
-const c = "Patil";
+  
+// Question 1
+let a =10,b=3;
+console.log("Addition: ",a+b,"\nSubutraction",a-b,"\nMultiplication: ",a*b,"\nDivision: ",a/b,"\nModulus: ",a%b)
 
-a = 'Updated'
-b= 'Updated'
-/* c= 'Upadated' -> Error : Uncaught TypeError: Assignment to constant variable.
-                            at main.js:7:2
-                            (anonymous) @ main.js:7 */
+// Question 2
+let x = 5;x=x+3
+console.log("X:",x,"-> += :",x += 3,"-= :",x -=3,"*= :",x *= 3,"/= :",x /= 3);
 
-{
-    let a = 10;
+// Question 3
+let count = 5;
+console.log("   --- Count -> 5 ---")
+console.log("Before:",count++,"After:",count)
+console.log("Before:",count--,"After:",count)
+
+// Question 4
+if (5 == '5') console.log("Same number different DataType notstrickly");
+if(5 === "5") console.log("Same number different DataType strickly");
+else console.log('Need to Number("5")');
+
+//Question 5
+if(a>5 && a<20 && a == 10) console.log("  -- Q5: True  ---")
+else console.log("False")
+
+//Qestion 6
+console.log(`T && F : ${true && false}`)
+console.log(`T || F : ${true || false}`)
+console.log(`!T : ${!true}`)
+
+// Question 7
+console.log(" --- Q7: Both true: ",(5 > 3 && 10 > 8),(5 > 3 || 10 < 8))
+
+/*
+//Question 8
+
+*/
+
+console.log(bb)
+var bb = 10;
+
+
+console.log("Q1. undefined\nQ2. Error(not initialization)\nQ3.Hello\nQ4.Error(TYpeError)\nQ5.Able to use variable before declaration. (b)let\n ")
+
+
+let age = Number(prompt("Enter Age: "))
+if(age >= 18)console.log("Adult");
+else console.log("Minor");
+
+let marks = prompt('Enter your Marks: ')
+if (marks >= 90 ) console.log("A grade");
+else if (marks >= 75) console.log("“B grade”");
+else if (marks >= 50) console.log("“C grade”");
+else console.log("“Fail”");
+
+let city = "Bhopal";
+if (city == 'Bhopal') console.log("MP");
+else if (city == 'Delhi') console.log("Capital");
+else console.log("Unkown city");
+
+let score = 40;
+(score >35)? console.log("Pass"):console.log("Fail")
+
+let temperature = 27;
+(temperature > 30)?console.log("HOt"):console.log("PLeasant")
+
+let day=5;
+switch (day){
+    case 1 :console.log("Monday");break;
+    case 2 :console.log("Tuesday");break;
+    case 3 :console.log("Webnesday");break;
+    case 4 :console.log("Thusday");break;
+    case 5 :console.log("Friday");break;
+    case 6 :console.log("Saturday");break;
+    case 7 :console.log("Sunday");break;
+    default: console.log("Invalid Number")
 }
-// console.log(a) -> Error: a is not defined
 
-const math = Math; // IN Libraries
-const gravity = 9.81;
-const pin = 1010122; 
-
-console.log('Shreyas')
-console.info('20')
-console.warn('Dombivli')
-
-// let usersname = prompt('Enter your name')
-// console.log(`Welcome ${usersname}\n`,typeof(usersname))
-
-// let age = prompt("Enter age:");
-// console.log(age+5); // Concatination occurs
-
-let msg = "I love Sheryians";
-console.log(msg.slice(2,6),
-msg.split(" "), // Words : 3
-msg.replace('love','study at'),
-msg.includes('love'))
-
-let x= 101;let y = 110; // works with semicolon
-
-console.log("Works")
-console.error("Errrror") 
-console.warn('Warning he bhai')
-
-// Expression and statements in console :
-// Expression gives value immediately   
-y= (10 + 5) *2;console.log(y)
-
-/* Expression is a complete statment's which need's be stored 
-   Statements are complete line of code where expression and storing is also done*/
-
-let age = 25; // Number
-let uname = "Shreyas" // String
-let isSTudenet = true // Boolean
-let skills = ['JS','HTML'] //object
-let user = {city : "Bhople"}; //object
-x= null; // object
-y = undefined; //undefined
-z= Symbol('id') //Symbol
-
-console.log(typeof(age),typeof(uname),typeof(isSTudenet),typeof(skills),typeof(user),typeof(x),typeof(y),typeof(z))
-
-console.log(1/0) //infinty
-console.log(0/0) //NaN
-console.log(Number('abc'),undefined + 1) //NaN
-
-//Use Null when we know value we are going to give
-//Use Undefined when we don't know if value changes or not
-
+let country = 'india';
+if(age>18 && country == 'india')console.log("Eligible for Vote");
+else console.log("Not Eligible");
