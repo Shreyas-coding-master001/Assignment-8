@@ -1,164 +1,153 @@
-//            --- Assignemnt - 3 ---
+//            --- Assignemnt - 4 ---
+console.log("\t --- Easy Questions --- ");
+// Question 1
+function SayHello(){
+    console.log("Hello Javascript");
+}
+
+SayHello();
+//Question 2
+function sum(a,b){
+    result = a+b;
+    console.log(result);
+    return result;
+}
+
+let ans = sum(5,10);
+//Question 3
+function Name(name="Guest"){
+    console.log(`Hello ${name}`);
+}
+
+Name();
+// Question 1+3=4 
+function Add(...num){
+    let sum = num.reduce((acc,val)=>{
+        return acc + val; 
+    },0);
+}
+
+console.log(Add(5,10,15,20,100,120,22,33,55));
+
+//Question 1+4=5
+(function(){
+    console.log("I run instantly!");
+}());
+
+//Question 1+5=6
+function ouuer(){
+    let a = "Ouuer(Upar wale function) se aya hu";
+    function inner(){
+        console.log(a);
+    }
+    inner();
+}
+ouuer();
+
+//Question 1+6=7
+arr= ["apple", "banana", "grapes", "mango", "orange"];
+
+let removeFruit = arr.pop();
+arr.unshift(removeFruit);
+
+//Question 1+7=8
+// Thodi checting chalti he 😅😅
+arr.forEach( val => console.log(val) );
+
+//Question 1+8 =9
+let person = {
+    name: "John",
+    age: 69,
+    city: "Dholakpur",
+};
+
+console.log(Object.keys(person));
+
+//Question 1+9=10 
+
+setTimeout(()=>{
+    console.error("2's but no instructions!")
+}, 5000);
+
+
+console.log("\t --- Level-2 Questions --- ");
+// Question 1
+function runTwicwe(fn){
+    fn();
+    fn();
+}
+runTwicwe(()=>{console.log("Running twice!")});
+
+// Question 2
+let gobal = 4;
+function pure(input){
+    return input * 2;
+}
+
+function impure(){
+    gobal++;
+    console.log(gobal);
+}
+
+// Question 3
+function Distructure({name,age}){
+    console.log(`Name is ${name} and age is ${age}`);
+}
+
+Distructure({name: "John", age: 30});
+
+// Question 4
+let obj = {
+    fun1: function(){
+        console.log(this);
+        () => console.log(this);
+    },
+    fun2:() => {console.log(this); },
+}
+
+obj.fun1();
+obj.fun2();
+
+
+// Question 5
+arr = [1,2,3,4,5,6];
+arr = arr.map(val => val**2);
+console.log(arr);
+
+// Question 6
+let arr2 = arr.filter(val => val%2 === 0);
+console.log(arr2);
+
 // Question 7
-/*
-let age = prompt("Enter Age: ");
-if(age === null){
-    console.warn("You Entered cancel");
-}else if(parseInt(age.trim())){
-    age > 18? console.log("Eligible"):console.log("Not Eligible");
-}else{
-    console.error("Invalid Number");
-}
-*/
+arr = [1000,2000,3000];
+sum = arr.reduce((acc,val)=>acc + val,0);
+console.log(`The Total salary is ${sum}`);
+
 // Question 8
-console.log("   --- Table -> 5 ---")
-for(let i=1;i<=10;i++){
-    console.log(`5 x ${i} = ${5*i}`);
+let username = ["alice", "bob", "charlie", "dave"];
+
+// username= ['yes','no','ok'];
+if(username.some(val => val.length > 3)){
+    console.log("In name array some are more than 3 characters");
+}else{
+    console.log("All names are 3 or less than 3 characters");   
 }
-console.log("   --- End ---")
+
+if(username.every(val => val.length > 3)){
+    console.log("In name array all are more than 3 characters");
+}else{
+    console.log("Some names are 3 or less than 3 characters");   
+}
 
 // Question 9
-for(let i = 1;i<16;i++){
-    if(i > 8){
-        console.log(`${i} is greater then 8`)
-    }
+obj = {
+    name: "Alen Waker",
+    age: 40,
+    city: "New York"
 }
+
+console.log(Object.keys(obj));
 
 // Question 10
-let userspassword = prompt("Create a password: ");
-let password = prompt("Enter Password: ");
-if(userspassword === password) console.log("Correct Password");
-else console.log("Enter wrong password.");
 
-//Question 11
-
-let i = 0,access=false;
-do{
-    let check = prompt("Enter password: ");
-    if(check === userspassword) {
-        console.log("Correct password.\n Login Successfull");
-        break;
-    }else console.log(`Wrong password ${3- i} try's left`);
-    i++;
-}while(i < 4);
-
-
-//Question 12
-
-let typed = null,count = 0;
-while(true){
-    typed = prompt("Type yes or stop");
-    if(typed === "")console.log("Please Write Something");
-    else if(typed === null) console.error("You pressed cancel");
-    else{
-        typed = typed.trim().toLowerCase();
-        if(typed === "stop") break;
-        else if(typed === "yes") count++;
-        else console.error("Please type yes or no");
-    }
-}
-
-console.log(`Yes count ${count}`);
-
-
-
-// Question 13 
-// only used this onces ok 👍
-let sum = 0;
-for(let i = 7;i<51;i+=7){
-    console.log(`${i} is divisible by 7`);
-    sum += i;
-}
-
-
-//Question 14
-sum= 0;
-for(let i=0;i<31;i++){
-    if(i%2 !== 0) sum += i;
-}
-console.log(`Sum of odd ${sum}`);
-
-//Question 15
-
-do{
-    let num = prompt("Enter a number: ");
-    if(num === "") console.warn("Entered nothing");
-    else{
-        num = parseInt(num.trim());
-        if(!num) console.error("Enter a number please");
-        else if(num % 2 === 0) break;
-    } 
-}while(true)
-
-//Question 16
-let start= prompt("Enter Starting value: ");
-let end = prompt("Enter a Ending: ");
-
-if(start === "" || end === "") console.warn("Empty values entered");
-else if(start === null || end === null) console.warn("Press cancel");
-else {
-    start = parseInt(start);end = parseInt(end);
-    if(isNaN(start) || isNaN(end)) console.log("Please enter number"); 
-    else {
-        if(start > end){
-            let temp = start;
-            start = end;
-            end = temp;
-        }
-        for(let i = start;i<end;i++){
-            console.log(i);
-        }
-    }
-}
-
-//Question 17
-count = 0;
-for(let i=1;i<20;i++){
-    if(i%2 !== 0){
-        count++;
-        if(count > 3) break;
-    }   
-}
-
-//Question 18
-count = 0;
-let asked = 0
-while(asked !== 5){
-    let num = prompt("Enter a number: ");
-    if(num === "") console.error("Enter Blank OK");
-    else if(num === null) console.warn("Pressed cancel")
-    else {
-        num = parseInt(num.trim());
-        if(num){
-            if(num > 0) count++;
-            asked++;
-        }
-        else console.error("Please enter a number...") 
-    }
-}
-console.log(`Postive number entered ${count} and negative are ${5-count}`)
-
-//Question 19 
-
-let balance = 1000,valid= false;
-asked = 0;
-while(asked <= 3){
-    let amount = prompt("Enter withdrawal amount...");
-    if(amount === null || amount === "") console.log("Nothing withdraw");
-    else{ 
-        amount = parseInt(amount.trim());
-        if(amount){
-            if(amount > balance) console.log("YE BHIK MANGYA..ITNA PAISA NAHI HE TERE PASS");
-            else{
-                balance -= amount;
-                console.log("Amount Withdrawn");
-            }
-            valid = true;
-            break;
-        }
-        else console.error("Invalid number!!!")
-    }
-    asked++;
-}
-if(valid) console.log(`Current Balance: ${balance}`);
-else console.error("Account locked!!")
+setTimeout(()=>console.warn("TimeUp"),2000);
