@@ -1,153 +1,153 @@
 //            --- Assignemnt - 4 ---
-console.log("\t --- Easy Questions --- ");
+console.log("\t --- OOPS --- ");
 // Question 1
-function SayHello(){
-    console.log("Hello Javascript");
-}
-
-SayHello();
-//Question 2
-function sum(a,b){
-    result = a+b;
-    console.log(result);
-    return result;
-}
-
-let ans = sum(5,10);
-//Question 3
-function Name(name="Guest"){
-    console.log(`Hello ${name}`);
-}
-
-Name();
-// Question 1+3=4 
-function Add(...num){
-    let sum = num.reduce((acc,val)=>{
-        return acc + val; 
-    },0);
-}
-
-console.log(Add(5,10,15,20,100,120,22,33,55));
-
-//Question 1+4=5
-(function(){
-    console.log("I run instantly!");
-}());
-
-//Question 1+5=6
-function ouuer(){
-    let a = "Ouuer(Upar wale function) se aya hu";
-    function inner(){
-        console.log(a);
+/* // This is Normally
+let user = {
+    name: "Shreyas",
+    email: "shreyas@gmail.com",
+    login: function(){
+        console.log("USer Logged in");
+        
     }
-    inner();
 }
-ouuer();
-
-//Question 1+6=7
-arr= ["apple", "banana", "grapes", "mango", "orange"];
-
-let removeFruit = arr.pop();
-arr.unshift(removeFruit);
-
-//Question 1+7=8
-// Thodi checting chalti he 😅😅
-arr.forEach( val => console.log(val) );
-
-//Question 1+8 =9
-let person = {
-    name: "John",
-    age: 69,
-    city: "Dholakpur",
-};
-
-console.log(Object.keys(person));
-
-//Question 1+9=10 
-
-setTimeout(()=>{
-    console.error("2's but no instructions!")
-}, 5000);
-
-
-console.log("\t --- Level-2 Questions --- ");
-// Question 1
-function runTwicwe(fn){
-    fn();
-    fn();
+let user1 = {
+    name: "Shreyas",
+    email: "shreyas@gmail.com",
+    login: function(){
+        console.log("USer Logged in");
+        
+    }
 }
-runTwicwe(()=>{console.log("Running twice!")});
+let user2 = {
+    name: "Shreyas",
+    email: "shreyas@gmail.com",
+    login: function(){
+        console.log("USer Logged in");
+        
+    }
+}
+let user3 = {
+    name: "Shreyas",
+    email: "shreyas@gmail.com",
+    login: function(){
+        console.log("USer Logged in");
+        
+    }
+}
+let user4 = {
+    name: "Shreyas",
+    email: "shreyas@gmail.com",
+    login: function(){
+        console.log("USer Logged in");
+        
+    }
+}
+*/
 
-// Question 2
-let gobal = 4;
-function pure(input){
-    return input * 2;
+//This is using classes
+// class User{
+//     constructor(){
+//         this.name = "Name"
+//         this.email = "email"
+//     }
+//     login(){
+//         console.log("User Logged in"); 
+//     }
+// }
+
+// const user1 = new User();
+// const user2 = new User();
+// const user3 = new User();
+// const user4 = new User();
+// const user5 = new User();
+
+
+let Product = {
+    name: "shirt",
+    price: 1000,
+    finalPrice: function(discount){
+        return this.price - discount
+    }
 }
 
-function impure(){
-    gobal++;
-    console.log(gobal);
+let user1 =  Product.finalPrice(200);
+console.log(user1);
+
+let user2 =  Product.finalPrice(500);
+console.log(user2);
+
+//Question-2
+class Car{
+    constructor(brand,speed){
+        this.brand = brand
+        this.speed = speed
+    }
+    drive(){
+        console.log(this.brand, this.speed);
+    }
 }
 
-// Question 3
-function Distructure({name,age}){
-    console.log(`Name is ${name} and age is ${age}`);
-}
+let car1 = new Car("Bugati",600)
+let car2 = new Car("Audi",400)
+/* Answer: With large Projects writing each values would take months😂 with objects, but classes helps to reduce it */
 
-Distructure({name: "John", age: 30});
+//Question-3
+class Student{
+    constructor(name,roll){ 
+        this.name = name
+        this.roll = roll
+    }
 
-// Question 4
-let obj = {
-    fun1: function(){
+    introduce(){
+        console.log(`Hello, Myself ${this.name} and my roll number is ${this.roll}`);
         console.log(this);
-        () => console.log(this);
-    },
-    fun2:() => {console.log(this); },
+    }
+    
+    introduceName = ()=>{
+        console.log(`Hello, Myself ${this.name} `)
+        console.log(this);
+    }
 }
 
-obj.fun1();
-obj.fun2();
+let student1 = new Student("Yash",14);
+let student2 = new Student("Kaivalya",24);
 
-
-// Question 5
-arr = [1,2,3,4,5,6];
-arr = arr.map(val => val**2);
-console.log(arr);
-
-// Question 6
-let arr2 = arr.filter(val => val%2 === 0);
-console.log(arr2);
-
-// Question 7
-arr = [1000,2000,3000];
-sum = arr.reduce((acc,val)=>acc + val,0);
-console.log(`The Total salary is ${sum}`);
-
-// Question 8
-let username = ["alice", "bob", "charlie", "dave"];
-
-// username= ['yes','no','ok'];
-if(username.some(val => val.length > 3)){
-    console.log("In name array some are more than 3 characters");
-}else{
-    console.log("All names are 3 or less than 3 characters");   
+//Question-4
+function User(){
+    // this.login = () =>{
+    //     console.log("Logged In");
+    // }       
 }
 
-if(username.every(val => val.length > 3)){
-    console.log("In name array all are more than 3 characters");
-}else{
-    console.log("Some names are 3 or less than 3 characters");   
+User.prototype.login = function(){
+    console.log("Logged In");
 }
 
-// Question 9
-obj = {
-    name: "Alen Waker",
-    age: 40,
-    city: "New York"
+user1 = new User();
+user2 = new User();
+
+//True for prototype and false for methods
+
+//Question-5
+function Employee(a,b,c){
+    console.log(this.name);
+    console.log(this.id);
+    console.log(a,b,c);
+    this.Work();
 }
 
-console.log(Object.keys(obj));
+let obj = {
+    name : "Yash",
+    id : 12345,
+    type : "Employee",
+    Work : function(){  
+        console.log("Working");
+    }
+}
 
-// Question 10
+let emp1 = Employee.bind(obj,1,2,3);
+emp1();
 
-setTimeout(()=>console.warn("TimeUp"),2000);
+console.log("\t ---Separate Using Call ---");
+
+Employee.call(obj,1,2,3);
